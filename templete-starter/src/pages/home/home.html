@@ -1,0 +1,49 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong></strong>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+  <!-- <h1>{{ title }}</h1> -->
+
+  <!-- this creates a google map on the page with the given lat/longitude from -->
+  <!-- the component as the initial center of the map: -->
+  <agm-map [latitude]="latitude" [longitude]="longitude">
+    <agm-marker *ngFor="let item of places.good"
+    [iconUrl]="'/assets/icon/map_icon/lighthouse.png'" 
+    [latitude]="item.lat" 
+    [longitude]="item.long"
+    (markerClick)="markerClick(item)"
+    
+    
+    ></agm-marker>
+
+    <agm-marker *ngFor="let item of places.need"
+    [iconUrl]="'/assets/icon/map_icon/lighthouseB.png'" 
+    [latitude]="item.lat" 
+    [longitude]="item.long"
+    (markerClick)="markerClick(item)"
+    
+    
+    ></agm-marker>
+  </agm-map>
+
+  
+
+</ion-content>

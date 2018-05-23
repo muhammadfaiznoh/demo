@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+   
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+<!-- <ion-list class="list-no-border" >
+    <ion-item *ngFor="let item of places.nearby" tappable (click)="searchBy(item)">
+        <ion-icon name="md-locate" item-left color="primary"></ion-icon>
+        <span ion-text color="primary">{{ item.name }}</span>
+      </ion-item> 
+
+</ion-list> -->
+<ion-row>
+  <ion-col text-center>
+    <h5>Take a Photo!</h5>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <button
+      ion-button
+      icon-left
+      block
+      outline
+      type="button"
+      (click)="onTakePhoto()">
+      <ion-icon name="camera"></ion-icon>
+      Open Camera
+    </button>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="imageFileName != ''">
+  <ion-col>
+    <img [src]="imageFileName">
+  </ion-col>
+</ion-row>
+
+</ion-content>
